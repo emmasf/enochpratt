@@ -251,19 +251,8 @@ h5 {
 }
 
 // Container that the modal scrolls within
-.modal {
-  display: none;
-  overflow: auto;
-  overflow-y: scroll;
-  position: fixed;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: $zindex-modal;
-  -webkit-overflow-scrolling: touch;
-  max-height: 100%;
-  
+.modal { 
+
   p {
     margin: 0;
     padding: 0;
@@ -273,27 +262,32 @@ h5 {
     font-size: 14px;
     text-align: justify;
     letter-spacing: .025em;
+    }
     
+  .btn.btn-default {
+    color: $gray-dark;
+    background-color: $page-bg;
+    border-color: $gray-lighter;
+    }
+    
+  .btn.btn-default:hover {
+    color: $link-color;
+    background-color: lighten($light-paper, 95%);
+    border-color: $gray-lighter;
+    }
+    
+  .reader-title {
+    color: $gray-light;
+    }
+  
   }
-
-  // Prevent Chrome on Windows from adding a focus outline. For details, see
-  // https://github.com/twbs/bootstrap/pull/10951.
-  outline: 0;
-
-  // When fading in the modal, animate it to slide down
-  &.fade .modal-dialog {
-    @include translate(0, -25%);
-    @include transition-transform(0.3s ease-out);
-  }
-  &.in .modal-dialog { @include translate(0, 0)}
-}
 
 // Shell div to position the modal with bottom padding
 .modal-dialog {
   position: relative;
   width: auto;
   margin: 10px;
-  max-width: 1200px;
+  max-width: 1140px;
 }
 
 
@@ -303,9 +297,9 @@ h5 {
   -moz-column-count:2; /* Firefox */
   -webkit-column-count:2; /* Safari and Chrome */
   column-count:2;
-  -moz-column-gap:30px; /* Firefox */
-  -webkit-column-gap:30px; /* Safari and Chrome */
-  column-gap:30px;  
+  -moz-column-gap:45px; /* Firefox */
+  -webkit-column-gap:45px; /* Safari and Chrome */
+  column-gap:45px;  
   overflow: hidden;
   position: relative;
   padding: $modal-inner-padding;
