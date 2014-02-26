@@ -16,6 +16,13 @@ body {
 a:hover {
   text-decoration: underline;
   }  
+  
+h1, h2, h3, h4{  
+  a { color: $brand-primary; } 
+  a:hover { 
+    color: $link-color;
+    } 
+  }
 
 .dropdown-menu {
   min-width:120px;
@@ -56,14 +63,18 @@ a:hover {
   }
     
     
-.content {
+.main-page {
   min-height:300px;
   background-color:#fff;
   border: 1px solid $body-border;
   border-radius: 5px;
+
   }
   
-.row.content {padding-top: 60px;}
+.row.main-page {
+  padding-top: 60px;
+  padding-bottom: 60px;
+  }
   
 .marketing {
   padding-top: 0px; 
@@ -125,6 +136,88 @@ a:hover {
   }
 
 
+
+
+  
+input {font-style: italic;}
+
+.big-search {
+  height: 60px;
+  margin-bottom:60px;
+  font-size: 24px
+  }
+  
+button.big-search.btn {
+  width:60px;
+  }
+
+.main-page {
+  padding: 30px 0;
+  }
+
+.item-brick {  
+  padding: 10px 0;
+  border-top: $emphasis-border;  
+  .item-thumb { margin: 10px  15px 20px 0;}
+  clear:both;
+  }
+  
+.item-brick.skinny {
+  padding:0;
+  h4 {margin: 10px 0 2px 0;}
+  .viewmore {padding: 10px 0;}
+  }    
+  
+.sidebar-module {
+  margin-bottom: 60px;
+  }
+  
+h2 {
+  font-size: 24px;
+  }
+  
+  
+h5 {
+  text-transform: uppercase;
+  font-family: sans-serif;
+  font-size: 13px;
+  color: $brand-primary;
+  }
+
+.col-sm-6 h2 { /* Homepage divided column man section */
+  margin-bottom: 15px;
+  }
+  
+.panel {
+  -webkit-box-shadow: 0 !important; 
+  box-shadow: 0 !important; 
+  }
+
+.panel-heading {
+  background: $page-bg;
+  border: 0;
+  
+  a {
+    color: $link-color;
+    font-size: 13px;
+    margin-left: -15px;
+    }
+  
+  }
+  
+.panel-collapse {
+  background-color: $light-paper;
+/*   border: $emphasis-border; */
+  }
+  
+.catalog-results {
+  padding-top: 15px;
+  }
+  
+.start {}
+
+
+
 @media (min-width: $screen-md-min) {  
   .visible-sm {
     display: none !important;
@@ -143,47 +236,126 @@ a:hover {
     }
   }
 
+//
+// Modals
+// --------------------------------------------------
+
+// .modal-open      - body class for killing the scroll
+// .modal           - container to scroll within
+// .modal-dialog    - positioning shell for the actual modal
+// .modal-content   - actual modal w/ bg and corners and shit
+
+// Kill the scroll on the body
+.modal-open {
+  overflow: hidden;
+}
+
+// Container that the modal scrolls within
+.modal {
+  display: none;
+  overflow: auto;
+  overflow-y: scroll;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: $zindex-modal;
+  -webkit-overflow-scrolling: touch;
+  max-height: 100%;
   
-input {font-style: italic;}
-
-.big-search {
-  height: 60px;
-  margin-bottom:60px;
-  font-size: 24px
+  p {
+    margin: 0;
+    padding: 0;
+    text-indent: 30px;
+    font-family: $font-family-serif;
+    font-weight: 400;
+    font-size: 14px;
+    text-align: justify;
+    letter-spacing: .025em;
+    
   }
+
+  // Prevent Chrome on Windows from adding a focus outline. For details, see
+  // https://github.com/twbs/bootstrap/pull/10951.
+  outline: 0;
+
+  // When fading in the modal, animate it to slide down
+  &.fade .modal-dialog {
+    @include translate(0, -25%);
+    @include transition-transform(0.3s ease-out);
+  }
+  &.in .modal-dialog { @include translate(0, 0)}
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: 10px;
+  max-width: 1200px;
+}
+
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  -moz-column-count:2; /* Firefox */
+  -webkit-column-count:2; /* Safari and Chrome */
+  column-count:2;
+  -moz-column-gap:30px; /* Firefox */
+  -webkit-column-gap:30px; /* Safari and Chrome */
+  column-gap:30px;  
+  overflow: hidden;
+  position: relative;
+  padding: $modal-inner-padding;
+  background-color: $light-paper;
   
-button.big-search.btn {
-  width:60px;
+  @media (max-width: $screen-md-min) {
+    -moz-column-count:1; /* Firefox */
+  -webkit-column-count:1; /* Safari and Chrome */
+  column-count:1;
   }
 
-.content {
-  padding: 30px 0;
+}
+
+// Footer (for actions)
+.modal-footer {
+  margin-top: 0;
+  padding: $modal-title-padding;
+  text-align: right; // right align buttons
+  border-top: 1px solid $modal-footer-border-color;
+  @include clearfix(); // clear it in case folks use .pull-* classes on buttons
+
+  // Properly space out buttons
+  .btn + .btn {
+    margin-left: 5px;
+    margin-bottom: 0; // account for input[type="submit"] which gets the bottom margin like all other inputs
+  }
+  // but override that for button groups
+  .btn-group .btn + .btn {
+    margin-left: -1px;
+  }
+  // and override it for block buttons as well
+  .btn-block + .btn-block {
+    margin-left: 0;
+  }
+}
+
+// Scale up the modal
+@media (min-width: $screen-sm-min) {
+
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    width: $modal-md;
+    margin: 30px auto;
+  }
+  .modal-content {
+    @include box-shadow(0 5px 15px rgba(0,0,0,.5));
   }
 
-.item-brick {  
-  padding: 10px 0;
-  border-top: $emphasis-border;  
-  .item-thumb { margin-right: 15px;}
-  }
-  
-.item-brick.skinny {
-  padding:0;
-  h4 {margin: 10px 0 2px 0;}
-  .viewmore {padding: 10px 0;}
-  }    
-  
-.sidebar-module {
-  margin-bottom: 60px;
-  }
-  
-h2 {
-  font-size: 24px;
-  }
+  // Modal sizes
+  .modal-sm { width: $modal-sm; }
+  .modal-lg { width: $modal-lg; }
 
-.col-sm-6 h2 {
-  margin-bottom: 15px;
-  }
-
-
-
-
+}

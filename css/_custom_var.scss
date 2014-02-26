@@ -6,6 +6,12 @@ $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")
 
 $screen-sm-max: 767px;
 $screen-md-min: 768px;
+$modal-sm: 90%;
+$modal-md: 90%;
+$modal-lg: 90%;
+
+$modal-backdrop-opacity: 0.9;
+$modal-inner-padding: 45px;
 
 $gray-darker:            lighten(#000, 13.5%) !default; 
 // #222
@@ -49,7 +55,7 @@ $page-bg:     #fff;
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
-$link-color:            $green;
+$link-color:            $blue;
 
 //** Link hover color set via `darken()` function.
 $link-hover-color:      #000;
@@ -90,15 +96,6 @@ $headings-font-family:    $font-family-serif;
 $headings-font-weight:    700 !default;
 $headings-line-height:    1.1 !default;
 $headings-color:          inherit !default;
-
-
-//-- Iconography
-//
-//## Specify custom locations of the include Glyphicons icon font. Useful for those including Bootstrap via Bower.
-
-$icon-font-path: "bootstrap/" !default;
-$icon-font-name:          "glyphicons-halflings-regular" !default;
-$icon-font-svg-id:				"glyphicons_halflingsregular" !default;
 
 //== Components
 //
@@ -148,21 +145,6 @@ $btn-primary-color:              #fff !default;
 $btn-primary-bg:                 $brand-primary !default;
 $btn-primary-border:             darken($btn-primary-bg, 5%) !default;
 
-$btn-success-color:              #fff !default;
-$btn-success-bg:                 $brand-success !default;
-$btn-success-border:             darken($btn-success-bg, 5%) !default;
-
-$btn-info-color:                 #fff !default;
-$btn-info-bg:                    $brand-info !default;
-$btn-info-border:                darken($btn-info-bg, 5%) !default;
-
-$btn-warning-color:              #fff !default;
-$btn-warning-bg:                 $brand-warning !default;
-$btn-warning-border:             darken($btn-warning-bg, 5%) !default;
-
-$btn-danger-color:               #fff !default;
-$btn-danger-bg:                  $brand-danger !default;
-$btn-danger-border:              darken($btn-danger-bg, 5%) !default;
 
 $btn-link-disabled-color:        $gray-light !default;
 
@@ -540,12 +522,6 @@ $list-group-link-heading-color: #333 !default;
       }
     }
     
-// Collapsable panels (aka, accordion)
-//
-// Wrap a series of panels in `.panel-group` to turn them into an accordion with
-// the help of our collapse JavaScript plugin.
-
-
 
 //== Thumbnails
 //

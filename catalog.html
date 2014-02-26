@@ -60,7 +60,7 @@ Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve you
   </nav>
 
   
-  <div class="row content"><!-- Main Body Content-->
+  <div class="row main-page"><!-- Main Body Content-->
   
     <div class="col-sm-10 col-md-offset-1 ">
       <div class="row">
@@ -69,14 +69,14 @@ Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve you
     <div class="input-group advanced-search">
       <input type="text" class="form-control" placeholder="Search All Books and Media">
       <span class="input-group-btn">
-        <button class="btn btn-default glyphicon glyphicon-search " type="button"></button>
+        <a href="search.html"><button class="btn btn-default glyphicon glyphicon-search " type="button"></button></a>
         </span>
       </div>
     <div class="panel-group" id="accordion">
-      <div class="panel panel-default">
+      <div class="panel">
         <div class="panel-heading">
-          <h4 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-          Advanced Search</a></h4>
+          <h5 class="panel-title"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+          Advanced Search</a></h5>
           </div>
         <div id="collapseOne" class="panel-collapse collapse">
           <div class="panel-body">
@@ -85,12 +85,29 @@ Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve you
           </div><!-- end collapseOne -->
         </div><!-- end panel -->
       </div><!-- end panel-group -->
-        <h2>Fiction</h2>   
+        
+      <div class="catalog-results start">  
+        <h5>Get Started</h5>
+        <div class="item-brick skinny">
+          <h2>Fiction</h2>   
+        </div>
+        <div class="item-brick skinny">
+          <h2>Career</h2>   
+        </div>
+        <div class="item-brick skinny">
+          <h2>Online Database Research</h2>   
+        </div>
+        <div class="item-brick skinny">
+          <h2>Reading Lists</h2>   
+        </div>        
+      
+      </div>    
+        
     </div><!-- left column -->
 
   <div class="col-sm-3 col-sm-offset-1">
     <div class="sidebar-module sidebar-module-inset">
-      <h4>Featured Reads</h4>
+      <h4>Recomended</h4>
       <div class="item-brick">
         <div class="item-text">
           <h4><a href="book.html">Book Title</a></h4>
@@ -115,15 +132,6 @@ Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve you
       <div class="item-brick">
             <p class="viewmore"><a href="#">View More</a></p>        
           </div>
-    </div>
-    <div class="sidebar-module">
-      <h4>Resources</h4>
-      <ol class="list-unstyled">
-        <li><a href="#">Online Career Resources</a></li>
-        <li><a href="#">Online Research Resources</a></li>
-        <li><a href="#">Talk to a Librarian</a></li>
-        <li><a href="#">Internet &amp; Computer</a></li>
-      </ol>
     </div>
   </div><!-- /.blog-sidebar -->
 
