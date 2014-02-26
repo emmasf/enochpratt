@@ -4,9 +4,6 @@
 // in Sass 3.3 this can be improved with: function-exists(twbs-font-path)
 $bootstrap-sass-asset-helper: (twbs-font-path("") != unquote('twbs-font-path("")')) !default;
 
-
-
-
 $screen-sm-max: 767px;
 $screen-md-min: 768px;
 
@@ -44,18 +41,20 @@ $input-group-addon-border-color: darken($input-group-addon-bg, 6.5%);
 // ## Settings for some of the most global styles.
 
 //** Background color for `<body>`.
-$body-bg:               #EFEFE9;
+$body-bg:     #EFEFE9;
 $body-border: #E3E2D9;
+$page-bg:     #fff;
 
 //** Global text color on `<body>`.
 $text-color:            $gray-dark !default;
 
 //** Global textual link color.
 $link-color:            $green;
+
 //** Link hover color set via `darken()` function.
-$link-hover-color:      darken($link-color, 15%) !default;
+$link-hover-color:      #000;
 
-
+$emphasis-border: 3px solid $body-bg;
 
 $btn-default-color:              #fff;
 $btn-default-bg:                 $link-color;
@@ -219,9 +218,9 @@ $dropdown-fallback-border:       #ccc !default;
 $dropdown-divider-bg:            #e5e5e5 !default;
 
 //** Dropdown link text color.
-$dropdown-link-color:            $gray-dark !default;
+$dropdown-link-color:            $link-color;
 //** Hover color for dropdown links.
-$dropdown-link-hover-color:      darken($gray-dark, 5%) !default;
+$dropdown-link-hover-color:      $link-hover-color;
 //** Hover background for dropdown links.
 $dropdown-link-hover-bg:         #f5f5f5 !default;
 
@@ -312,29 +311,21 @@ $grid-float-breakpoint-max: ($grid-float-breakpoint - 1) !default;
 
 //=== Shared nav styles
 $nav-link-padding:                          10px 15px !default;
-$nav-link-hover-bg:                         $gray-lighter !default;
+$nav-link-hover-bg:                         $body-bg;
 
 $nav-disabled-link-color:                   $gray-light !default;
 $nav-disabled-link-hover-color:             $gray-light !default;
 
-$nav-open-link-hover-color:                 #fff !default;
+$nav-open-link-hover-color:                 $link-hover-color;
 
 //== Tabs
-$nav-tabs-border-color:                     #ddd !default;
+$nav-tabs-border-color:                     $body-border !default;
 
-$nav-tabs-link-hover-border-color:          $gray-lighter !default;
+$nav-tabs-link-hover-border-color:          $body-bg !default;
 
-$nav-tabs-active-link-hover-bg:             $body-bg !default;
-$nav-tabs-active-link-hover-color:          $gray !default;
-$nav-tabs-active-link-hover-border-color:   #ddd !default;
-
-$nav-tabs-justified-link-border-color:            #ddd !default;
-$nav-tabs-justified-active-link-border-color:     $body-bg !default;
-
-//== Pills
-$nav-pills-border-radius:                   $border-radius-base !default;
-$nav-pills-active-link-hover-bg:            $component-active-bg !default;
-$nav-pills-active-link-hover-color:         $component-active-color !default;
+$nav-tabs-active-link-hover-bg:             $page-bg;
+$nav-tabs-active-link-hover-color:          $link-hover-color;
+$nav-tabs-active-link-hover-border-color:   $body-border;
 
 
 //== Pagination
@@ -512,6 +503,49 @@ $list-group-link-color:         #555 !default;
 $list-group-link-heading-color: #333 !default;
 
 
+//
+// Panels
+// --------------------------------------------------
+
+
+// Base class
+.panel {
+  margin-bottom: $line-height-computed;
+  background-color: $mid-paper;
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+// Panel contents
+.panel-body {
+}
+
+
+// List groups in panels
+//
+// By default, space out list group content from panel headings to account for
+// any kind of custom content between the two.
+
+.panel {
+  > .list-group {
+    margin-bottom: 0;
+    .list-group-item {
+      border-width: 1px 0;
+      border-radius: 0;
+      &:first-child {
+        border-top: 0;
+      }
+      &:last-child {
+        border-bottom: 0;
+      }
+    }
+    
+// Collapsable panels (aka, accordion)
+//
+// Wrap a series of panels in `.panel-group` to turn them into an accordion with
+// the help of our collapse JavaScript plugin.
+
+
 
 //== Thumbnails
 //
@@ -628,3 +662,5 @@ $container-md:                 $container-desktop !default;
 $container-large-desktop:      ((1140px + $grid-gutter-width)) !default;
 //** For `$screen-lg-min` and up.
 $container-lg:                 $container-large-desktop !default;
+
+}}

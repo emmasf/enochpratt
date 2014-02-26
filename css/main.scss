@@ -10,18 +10,51 @@ body {
   }
   
 .container {
-  padding: 0 !important; }
+  padding: 0 !important; 
+  }
   
+a:hover {
+  text-decoration: underline;
+  }  
+
+.dropdown-menu {
+  min-width:120px;
+  padding:8px 0;
+  
+  > li > a {
+    padding: 3px 15px;
+    }
+    
+  > li > a:hover {
+    background: 0;
+    text-decoration: underline;
+    } 
+  }  
   
 .nav-chrome {
   margin-bottom:-5px;
   padding-top: 30px;
+  
+  .dropdown-menu {
+    top:32px;
+    left:30px;
+    }
+  
   }
 
 .nav-tabs {
     border-bottom: 0;
+    
+    li a {
+      border: 0;
+    }
+    
+    li a:hover {
+    background: 0;
+    text-decoration: underline;
+    } 
   }
-  
+    
     
 .content {
   min-height:300px;
@@ -30,11 +63,14 @@ body {
   border-radius: 5px;
   }
   
+.row.content {padding-top: 60px;}
+  
 .marketing {
-  margin-top: 45px; 
+  padding-top: 0px; 
+  margin-top: 15px; 
   margin-bottom:30px;
   padding: 45px 0 15px 0;
-  border: 3px solid $body-bg;
+  border: $emphasis-border;
   img {
     margin: 10px 20px 0 0;
     width: 180px;  
@@ -45,7 +81,7 @@ body {
     font-style: italic;
     padding-right: 180px;
     } 
-  p {margin-top: 30px;} 
+  p {margin: 30px 0;} 
   }
 
 
@@ -66,6 +102,14 @@ body {
     
   img {float: left; margin-right: 12px;
   }
+  
+  li {
+  float: left;
+  padding-right:30px;
+  line-height: 1.5em;
+  }
+  
+  ol {padding-top:5px;}
   
   }
   
@@ -98,21 +142,14 @@ body {
     display: none !important;
     }
   }
-  
-.big-header-logo {
-  font-size: 60px;
-  font-weight: 700;
-  text-align: center;
-  margin:45px 0 15px 0;
-  color: $brand-primary;
-  }
+
   
 input {font-style: italic;}
 
 .big-search {
   height: 60px;
   margin-bottom:60px;
-  font-size: 18px
+  font-size: 24px
   }
   
 button.big-search.btn {
@@ -125,7 +162,7 @@ button.big-search.btn {
 
 .item-brick {  
   padding: 10px 0;
-  border-top: 1px solid #ccc;  
+  border-top: $emphasis-border;  
   .item-thumb { margin-right: 15px;}
   }
   
@@ -139,7 +176,13 @@ button.big-search.btn {
   margin-bottom: 60px;
   }
   
-.col-sm-6 h2 {margin-bottom: 15px;}
+h2 {
+  font-size: 24px;
+  }
+
+.col-sm-6 h2 {
+  margin-bottom: 15px;
+  }
 
 
 
