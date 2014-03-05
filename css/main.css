@@ -2326,7 +2326,9 @@ h5 { text-transform: uppercase; font-family: "Open Sans", Helvetica, Arial, sans
 .panel { -webkit-box-shadow: 0 !important; box-shadow: 0 !important; }
 
 .panel-heading { background: white; border: 0; }
-.panel-heading a { color: #008fbf; font-size: 13px; margin-left: -15px; }
+.panel-heading h5 { font-size: 16px; padding-top: 6px; }
+.panel-heading a { color: #000; margin-left: -15px; }
+.panel-heading a:hover, .panel-heading a:focus { color: #008fbf; }
 
 .panel-collapse { background-color: #f7f5ee; /*   border: $emphasis-border; */ }
 
