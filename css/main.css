@@ -2338,6 +2338,12 @@ h5 { text-transform: uppercase; font-family: "Open Sans", Helvetica, Arial, sans
   .hidden-sm { display: block !important; } }
 @media (max-width: 767px) { .visible-sm { display: block !important; }
   .hidden-sm { display: none !important; } }
+.launch-reader { margin-top: 30px; }
+.launch-reader .btn-lg, .launch-reader .btn-group-lg > .btn { padding: 8px 12px; }
+.launch-reader .btn.btn-info.plain { color: #008fbf; background-color: white; border-color: #fff; }
+.launch-reader .btn.btn-info.plain img { width: 30px; margin-right: 6px; }
+.launch-reader .btn.btn-info.plain:hover { color: #008fbf; text-decoration: underline; background-color: #fff; border-color: #fff; }
+
 .modal-open { overflow: hidden; }
 
 .modal p { margin: 0; padding: 0; text-indent: 30px; font-family: "Merriweather", Times, serif; font-weight: 400; font-size: 14px; text-align: justify; letter-spacing: .025em; }

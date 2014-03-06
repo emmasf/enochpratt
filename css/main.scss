@@ -326,6 +326,27 @@ h5 {
     display: none !important;
     }
   }
+  
+.launch-reader {margin-top: 30px;
+
+    .btn-lg {padding: 8px 12px;}
+
+    .btn.btn-info.plain {
+    color: $link-color;
+    background-color: $page-bg;
+    border-color: #fff;
+    
+    img {width:30px; margin-right:6px;}
+    
+    }
+    
+  .btn.btn-info.plain:hover {
+    color: $link-color;
+    text-decoration: underline;
+    background-color: #fff;
+    border-color: #fff;
+    }
+}
 
 //
 // Modals
